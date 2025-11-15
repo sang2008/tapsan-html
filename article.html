@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BáoMẫu — Bài viết</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <img src="logo TT.png" alt="Logo Trường THPT Tây Thạnh" class="logo" />
+          <div class="brand-text">
+            <h1>Trường THPT Tây Thạnh</h1>
+            <span class="tagline">Tin tức — Hoạt động — Góc học tập</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-actions">
+        <button id="darkModeToggle" class="icon-btn" title="Chuyển giao diện">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container article-page">
+    <article class="article-card">
+      <h1 id="articleTitle">Tựa đề bài viết mẫu</h1>
+      <p class="meta">Tác giả: Nam PV — 24 Tháng 11, 2025 — 6 phút đọc</p>
+      <img id="articleImage" src="https://picsum.photos/1000/500?random=2" alt="ảnh bài viết" />
+      <div id="articleBody" class="article-body">
+        <p>Đoạn mở bài: Mở đầu gợi dẫn, tóm tắt nhanh nội dung chính...</p>
+        <h3>Tiêu đề phụ</h3>
+        <p>Nội dung chi tiết của bài viết... Bạn có thể copy đoạn văn mẫu hoặc thay bằng nội dung thực tế. Phần này có thể có nhiều đoạn, ảnh, trích dẫn.</p>
+
+        <blockquote class="quote">"Đoạn trích dẫn nổi bật trong bài, dùng để nhấn mạnh." — Người viết</blockquote>
+
+        <p>Kết bài: Kết luận và lời kêu gọi theo dõi.</p>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="card widget">
+        <h4>Tin liên quan</h4>
+        <ul id="relatedList"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="currentYear2"></span> BáoMẫu</p>
+    </div>
+  </footer>
+
+  <script rc="script.js">
+    // Hiển thị năm
+    document.getElementById('currentYear2').textContent = new Date().getFullYear();
+
+    // Dữ liệu giả (bạn có thể thay bằng fetch từ server)
+    const related = [
+      {id:1, title:'Bài liên quan 1'},
+      {id:2, title:'Bài liên quan 2'},
+      {id:3, title:'Bài liên quan 3'}
+    ];
+    const ul = document.getElementById('relatedList');
+    related.forEach(r=>{
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = 'index.html'; // đổi link tới bài thật
+      a.textContent = r.title;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>

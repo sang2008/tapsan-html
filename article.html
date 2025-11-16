@@ -54,25 +54,6 @@
     </div>
   </footer>
 
-  <script rc="script.js">
-    // Hiển thị năm
-    document.getElementById('currentYear2').textContent = new Date().getFullYear();
-
-    // Dữ liệu giả (bạn có thể thay bằng fetch từ server)
-    const related = [
-      {id:1, title:'Bài liên quan 1'},
-      {id:2, title:'Bài liên quan 2'},
-      {id:3, title:'Bài liên quan 3'}
-    ];
-    const ul = document.getElementById('relatedList');
-    related.forEach(r=>{
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = 'index.html'; // đổi link tới bài thật
-      a.textContent = r.title;
-      li.appendChild(a);
-      ul.appendChild(li);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

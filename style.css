@@ -248,4 +248,46 @@ a:hover{ text-decoration:underline; }
 a, a:hover, a:focus, a:active, a:visited {
   text-decoration: none !important;
 }
+/* ==== ẢNH TRONG BÀI VIẾT ==== */
+.article-img-wrap {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.article-img-wrap img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.img-caption {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Ảnh dạng gallery 2 ảnh cạnh nhau */
+.gallery-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.gallery-2 img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Mobile: 2 ảnh xuống 1 hàng */
+@media (max-width: 768px) {
+  .gallery-2 {
+    grid-template-columns: 1fr;
+  }
+}
 

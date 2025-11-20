@@ -12,14 +12,60 @@
 
 /* Dark mode variables (toggled via .dark on body) */
 body.dark {
-  --bg: #0f1724;
-  --card: #0b1220;
-  --text: #e6eef8;
-  --muted: #9aa6b2;
-  --accent: #ff8a80;
-  --accent-2: #5bb3ff;
+  --bg: #0d1117;              /* nền sâu kiểu GitHub dark */
+  --card: #161b22;            /* thẻ đậm vừa – giúp tách lớp */
+  --text: #e6edf3;            /* chữ trắng dịu */
+  --muted: #9aa6b2;           /* chữ phụ */
+  --accent: #ff6b6b;          /* đỏ nhẹ cực hợp báo */
+  --accent-2: #4da3ff;        /* xanh nhấn */
 }
 
+/* Header tối + bóng nhẹ */
+body.dark .site-header {
+  background: #161b22;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Card nổi hơn */
+body.dark .article-card,
+body.dark .card,
+body.dark .hero-article {
+  background: #161b22;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* Hero content */
+body.dark .hero-content {
+  background: #0e2a52; /* xanh đậm sang hơn */
+}
+
+/* Link */
+body.dark a {
+  color: var(--accent-2);
+}
+body.dark a:hover {
+  opacity: 0.8;
+}
+
+/* Input */
+body.dark .search {
+  background: #0d1117;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+}
+
+/* Ảnh trong bài có viền sáng nhẹ */
+body.dark .article-card img,
+body.dark .hero-article img {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Footer tối */
+body.dark .site-footer {
+  color: #b1bac4;
+}
 body{
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: var(--bg);
@@ -57,16 +103,8 @@ body{
   font-size:12px;
   color:var(--muted);
 }
-.main-nav { display:flex; gap:12px; align-items:center; }
-.main-nav .nav-link {
-  text-decoration:none; color:var(--muted); font-weight:600; font-size:14px;
-}
 .header-actions{
   display:flex; gap:8px; align-items:center;
-}
-.search{
-  padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08);
-  background:transparent; outline:none; min-width:160px;
 }
 .title p {
   margin: 2px 0;
@@ -106,6 +144,8 @@ body{
   overflow: hidden;
   background: transparent;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .hero-article img {

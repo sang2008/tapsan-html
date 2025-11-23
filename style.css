@@ -266,6 +266,7 @@ body{
   .sidebar{ width:100%; order:2; }
   .main-nav{ display:none; }
   .header-inner{ gap:12px; padding:8px 0; }
+  .gallery-2 {grid-template-columns: 1fr; }
 }
 
 /* small polish */
@@ -336,10 +337,5 @@ a, a:hover, a:focus, a:active, a:visited {
   object-fit: cover;
 }
 
-/* Mobile: 2 ảnh xuống 1 hàng */
-@media (max-width: 768px) {
-  .gallery-2 {
-    grid-template-columns: 1fr;
-  }
-}
+
 

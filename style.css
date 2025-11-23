@@ -336,6 +336,65 @@ a, a:hover, a:focus, a:active, a:visited {
   border-radius: 10px;
   object-fit: cover;
 }
+/* ================================
+   BACK TO TOP BUTTON (LIGHT + DARK)
+==================================*/
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  /* Light mode default */
+  background: linear-gradient(135deg, #0b66c3, #0d8cff);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+
+  transition: 
+    background 0.3s ease,
+    transform 0.25s ease,
+    opacity 0.3s ease,
+    bottom 0.3s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Icon SVG màu trắng */
+#backToTopBtn svg path {
+  stroke: white;
+  transition: 0.3s;
+}
+
+/* Hover phóng to */
+#backToTopBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* Nút khi xuất hiện */
+#backToTopBtn.show {
+  display: flex !important;
+  opacity: 1;
+  bottom: 30px;
+}
+
+#backToTopBtn.hide {
+  opacity: 0;
+  bottom: 10px;
+}
+
+/* DARK MODE: đổi sang gradient vàng */
+body.dark #backToTopBtn {
+  background: linear-gradient(135deg, #ffb300, #ff8800);
+  box-shadow: 0 8px 20px rgba(255, 185, 70, 0.35);
+}
+
 
 
 

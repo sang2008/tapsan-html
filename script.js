@@ -1,25 +1,30 @@
 // ==========================
-// A. DARK MODE NÂNG CẤP
+// A. DARK MODE NÂNG CẤP (CHECKBOX VERSION)
 // ==========================
 const dmToggle = document.getElementById('darkModeToggle');
 
-// Lấy trạng thái đã lưu
+// 1. Kiểm tra trạng thái đã lưu khi tải trang
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
-  if (dmToggle) dmToggle.textContent = "☀️";
+  // Nếu là dark mode, đánh dấu checkbox là đã chọn (để hiện mặt trăng)
+  if (dmToggle) dmToggle.checked = true;
 }
 
-// Nhấn nút đổi giao diện
-dmToggle && dmToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-
-  const isDark = document.body.classList.contains('dark');
-  dmToggle.textContent = isDark ? "☀️" : "🌙";
-
-  // Lưu vào trình duyệt
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
+// 2. Lắng nghe sự kiện thay đổi (Gạt nút)
+if (dmToggle) {
+  dmToggle.addEventListener('change', (e) => {
+    // Nếu checkbox được chọn (checked) -> Bật Dark Mode
+    if (e.target.checked) {
+      document.body.classList.add('dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      // Nếu bỏ chọn -> Tắt Dark Mode
+      document.body.classList.remove('dark');
+      localStorage.setItem("theme", "light");
+    }
+  });
+}
 
 // Transition siêu mượt cho giao diện
 document.body.style.transition = "background 0.3s ease, color 0.3s ease";
@@ -83,7 +88,12 @@ rippleStyle.innerHTML = `
   }
 `;
 document.head.appendChild(rippleStyle);
+// ==========================
+// FADE-IN HIỆU ỨNG CUỘN
+// ==========================
 
+// Chọn phần tử cần fade
+const fadeElements = document.querySelectorAll(".article-card, .hero-article");
 // Thêm CSS fade-in
 fadeElements.forEach(el => {
   el.style.opacity = "0";
@@ -110,3 +120,19 @@ fadeElements.forEach(el => observer.observe(el));
 // ==========================
 const year = document.getElementById("currentYear");
 if (year) year.textContent = new Date().getFullYear();
+// ❄ Snowfall Effect
+function createSnow() {
+  const snow = document.createElement("div");
+  snow.className = "snow";
+  snow.style.left = Math.random() * window.innerWidth + "px";
+  snow.style.animationDuration = 2 + Math.random() * 3 + "s";
+  snow.style.opacity = Math.random();
+  snow.style.fontSize = 10 + Math.random() * 20 + "px";
+  snow.innerHTML = "❄";
+  document.body.appendChild(snow);
+
+  setTimeout(() => snow.remove(), 5000);
+}
+
+setInterval(createSnow, 150);
+
